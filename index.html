@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Plastic Footprint Calculator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="test" />
+    <meta property="og:site_name" content="Plastic Footprint Calculator" />
+    <meta property="og:title" content="Plastic Footprint Calculator" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="test" />
+    <link
+      href="https://fonts.googleapis.com/css?display=swap&family=Lexend+Deca:400,400italic,300,300italic%7CInter:300,300italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="script.js" />
+    <noscript><link rel="stylesheet" href="assets/noscript.css" /></noscript>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/checkout.js" defer></script>
+    <style>
+      .mybutton {
+        margin-top: 2rem;
+        display: inline-block;
+        width: 17.125rem;
+        height: 2rem;
+        line-height: calc(2rem - 2px);
+        padding: 0 0.5rem;
+        font-size: 0.875em;
+        font-family: "Inter", sans-serif;
+        letter-spacing: 0.15rem;
+        padding-left: calc(0.15rem + 0.5rem);
+        font-weight: 300;
+        border-radius: 1rem;
+        direction: var(--site-language-direction);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #333333;
+        border: solid 1px #030303;
+        transition: color 0.25s ease, background-color 0.25s ease,
+          border-color 0.25s ease;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body class="is-loading">
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <div id="container01" class="style2 container default">
+            <div class="wrapper">
+              <div class="inner">
+                <p id="text03" class="style5">Plastic Footprint Calculator</p>
+                <ul id="icons03" class="style2 icons">
+                  <li>
+                    <a class="n01" href="#start">
+                      <svg>
+                        <use xlink:href="assets/icons.svg#arrow-down"></use>
+                      </svg>
+                      <span class="label">Arrow Down</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr id="divider05" class="style2" />
+          <div
+            id="container04"
+            data-scroll-id="start"
+            data-scroll-behavior="center"
+            data-scroll-offset="0"
+            data-scroll-invisible="1"
+            class="style1 container default"
+          >
+            <div class="wrapper">
+              <div class="inner" data-onvisible-trigger="1">
+                <h2 id="text01" class="style2">Calculator</h2>
+                <hr id="divider02" class="style1 full" />
+                <form
+                  enctype="multipart/form-data"
+                  id="form01"
+                  method="post"
+                  action="#"
+                >
+                  <div class="inner">
+                    <div class="field" id="PetBottles_">
+                      <label for="form01-pet-bottles">Pet Bottles</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="pet-bottles"
+                          id="PetBottlesTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-pet-bottles"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-pet-bottles"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="Singleusebag_">
+                      <label for="form01-single-use-bags">Single Use Bags</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="single-use-bagss"
+                          id="SingleusebagTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-single-use-bags"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-single-use-bags"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="singleusewrappers_">
+                      <label for="form01-single-use-wrappers"
+                        >Single Use Wrappers</label
+                      >
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="single-use-wrappers"
+                          id="singleusewrappersTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-single-use-wrappers"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-single-use-wrappers"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="cottonswabs_">
+                      <label for="form01-cotton-swabs">Cotton Swabs</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="cotton-swabs"
+                          id="cottonswabsTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-cotton-swabs"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-cotton-swabs"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="plasticcontainers_">
+                      <label for="form01-plastic-containers">Plastic containers</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="plastic-containers"
+                          id="plasticcontainersTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-plastic-containers"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-plastic-containers"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="Milkcontainer_">
+                      <label for="form01-milk-containers">Milk Containers</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="milk-containers"
+                          id="MilkcontainerTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-milk-containers"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-milk-containers"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="Plasticplates_">
+                      <label for="form01-plastic-plates">Plastic Plates</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="plastic-plates"
+                          id="PlasticplatesTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-plastic-plates"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-plastic-plates"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="Singleusecutlery_">
+                      <label for="form01-single-use-cutlery">Single use cutlery</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="single-use-cutlery"
+                          id="SingleusecutleryTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-single-use-cutlery"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-single-use-cutlery"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="PlasticbinLiner_">
+                      <label for="form01-plastic-bin-liner">Plastic Bin Liner</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="plastic-bin-liner"
+                          id="PlasticbinLinerTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-plastic-bin-liner"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-plastic-bin-liner"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="Juicecartons_">
+                      <label for="form01-juce-cartons">Juice Containers</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="juce-cartons"
+                          id="JuicecartonsTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-juce-cartons"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-juce-cartons"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="field" id="PlasticStraws_">
+                      <label for="form01-plastic-straws">Plastic Straws</label>
+                      <div class="number">
+                        <input
+                          type="number"
+                          name="plastic-straws"
+                          id="PlasticStrawsTime"
+                          placeholder=""
+                          maxlength="128"
+                          data-category="integer"
+                          step="1"
+                          required
+                        />
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="decrement"
+                          data-id="form01-plastic-straws"
+                        >
+                          <svg>
+                            <use
+                              xlink:href="assets/icons.svg#minus-light"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button
+                          tabindex="-1"
+                          type="button"
+                          class="increment"
+                          data-id="form01-plastic-straws"
+                        >
+                          <svg>
+                            <use xlink:href="assets/icons.svg#plus-light"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <input type="button" class="mybutton" value="Calculate" onclick="plasticFootPrint()">
+                      </input>                    
+                    </div><br>
+
+                    <div class="field">
+                      <label>Your yearly plastic footprint is </label>
+                      <div id="totalFootprintSum"></div>
+                    </div>
+                    <div class="field">
+                      <label>Number of trees to be planted</label>
+                      <div id="totalTreeSum"></div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="id" value="form01" />
+                </form>
+                <form id="payment-form" style="display: block">
+                  <div id="payment-element">
+                    <!--Stripe.js injects the Payment Element-->
+                  </div>
+                  <button id="submit" class="mybutton">
+                    <div class="spinner hidden" id="spinner"></div>
+                    <span id="button-text">Pay now</span>
+                  </button>
+                  <div id="payment-message" class="hidden"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <hr id="divider03" class="style1 full" />
+        </div>
+      </div>
+    </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/main.js"></script>
+  </body>
+<script>
+var PetBottles = 13.1;
+var Singleusebag = 2.9;
+var singleusewrappers = 5.5;
+var plasticcontainers = 5.5;
+var cottonswabs = 0.4;
+var Takeawayplasticcup = 7.3;
+
+var PlasticStraws = 0.2;
+var Singleusecutlery = 1.5;
+var Plasticplates = 8.8;
+var Milkcontainer = 10.18;
+var PlasticbinLiner = 11.49;
+var Juicecartons = 6.48;
+
+function plasticFootPrint() {
+var PetBottlesFp =
+PetBottles * document.getElementById("PetBottlesTime").value; //pet bottles
+
+var SingleusebagFp =
+Singleusebag * document.getElementById("SingleusebagTime").value; //single use bottle
+
+var singleusewrappersFp =
+singleusewrappers * document.getElementById("singleusewrappersTime").value; //single use wrapper
+
+var plasticcontainersFp =
+plasticcontainers * document.getElementById("plasticcontainersTime").value; //plastic containiers 
+
+var cottonswabsFp =
+cottonswabs * document.getElementById("cottonswabsTime").value; //cotton swabs
+
+// var TakeawayplasticcupFp =
+//   Takeawayplasticcup * document.getElementById("TakeawayplasticcupTime").value;
+
+var PlasticStrawsFp =
+PlasticStraws * document.getElementById("PlasticStrawsTime").value; //plastic straws
+
+var SingleusecutleryFp =
+Singleusecutlery * document.getElementById("SingleusecutleryTime").value; //single use cutlery
+
+var PlasticplatesFp =
+Plasticplates * document.getElementById("PlasticplatesTime").value; //plastic plates
+
+var MilkcontainerFp =
+Milkcontainer * document.getElementById("MilkcontainerTime").value; //milk containers
+
+var PlasticbinLinerFp =
+PlasticbinLiner * document.getElementById("PlasticbinLinerTime").value; //plastic bin liner
+
+var JuicecartonsFp =
+Juicecartons * document.getElementById("JuicecartonsTime").value; //juice containers
+
+var totalFootprint =
+PetBottlesFp +
+SingleusebagFp +
+singleusewrappersFp +
+plasticcontainersFp +
+cottonswabsFp +
+PlasticStrawsFp +
+SingleusecutleryFp +
+PlasticplatesFp +
+MilkcontainerFp +
+PlasticbinLinerFp +
+JuicecartonsFp;
+
+var totalTree =
+Math.round((totalFootprint) / 27.7);
+
+
+document.getElementById("totalFootprintSum").innerHTML=totalFootprint + " kgs";
+document.getElementById("totalTreeSum").innerHTML=totalTree;
+
+}
+  </script>
+</html>
